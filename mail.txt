@@ -1,0 +1,56 @@
+<?php
+      $email='rajans2206@gmail.com';
+      $subject = "Payment Receipt";
+      $headers  = 'MIME-Version: 1.0' . "\r\n";
+$headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
+ $from='packetmathsdictionary@gmail.com';
+// Create email headers
+$headers .= 'From: '.$from."\r\n".
+    'Reply-To: '.$from."\r\n" .
+    'X-Mailer: PHP/' . phpversion();
+$body = '<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        table, th, td {
+          border: 1px solid black;
+        }
+        </style>
+</head>
+<body>
+    <div class="table" style="text-align: center; margin-top: 50px;">
+    <h2>Payment Invoice</h2>
+    <br>
+    <table style="width:50%; margin: auto;">
+    
+   
+        <tr>
+          <th>Parameters</th>
+          <th>Status</th> 
+        </tr>
+        <tr>
+          <td>Payment ID</td>
+          <td>paydjkndk</td>
+        </tr>
+        <tr>
+          <td>Payment Status</td>
+          <td>SUCCESS</td>
+        </tr>
+       
+      </table>
+    </div>
+    <div class="text-center">
+    <h8>This is a computer generated invoice. Hence no signature is required.</h8>
+    </div>
+    </body>
+    </html>';
+echo '0';
+echo $body;
+$headers = "Invoice";
+echo '0';
+if (mail($email, $subject, $body, $headers)) {
+    echo include 'thank_you.php';
+} else {
+    echo "Email sending failed...";
+}
+?>

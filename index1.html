@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="index1.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+    <title>Payment Gateway Integration</title>
+</head>
+
+<body>
+    <div class="card-info">
+        <form action="index.php" method="POST">
+            <div class="row">
+                <div class="col-50">
+                    <h3 style="text-align: center;">Donor Info</h3>
+                    <label for="fname"><i class="fa fa-user"></i> Full Name</label>
+                    <input type="text" name="name" id="name" placeholder="Your Good Name" required />
+                    <label for="email"><i class="fa fa-envelope"></i> Email</label>
+                    <input type="text" id="email" name="email" placeholder="john@example.com" required>
+                    <label for="phone"><i class="fa fa-phone"></i> Phone Number</label>
+                    <input type="tel" pattern="[0-9]{10}" id="phone" name="phone" placeholder="123 4567 890" required>
+                    <label for="amt"><i class="fa fa-envelope"></i> Amount</label>
+                    <input type="text" name="amt" id="amt" placeholder="Enter Amount" required />
+                    <label for="ptype"><i class="fa fa-user"></i> Payment Type</label>
+                    <label class="container">Credit or Debit Card
+                        <input type="radio" checked="checked" name="radio">
+                        <span class="checkmark"></span>
+                    </label>
+                    <label class="container">UPI/QR
+                        <input type="radio" name="radio">
+                        <span class="checkmark"></span>
+                    </label>
+                    <label class="container">Netbanking
+                        <input type="radio" name="radio">
+                        <span class="checkmark"></span>
+                    </label>
+                    <label class="container">Wallet
+                        <input type="radio" name="radio">
+                        <span class="checkmark"></span>
+                    </label>
+                    <input type="button" name="btn" class="btn" id="btn" value="Pay Now" onclick="pay_now()" />
+
+
+                </div>
+            </div>
+        </form>
+
+    </div>
+</body>
+
+</html>
